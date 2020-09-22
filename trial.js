@@ -1,96 +1,4 @@
-// var upper;
-// var lower;
-// var number;
-// var symbol;
-// var start;
-// var confirmNumber;
-// var confirmSymbol;
-// var confirmUppercase;
-// var confirmLowercase;
-// var generate;
-// var start;
-// var choice;
 
-
-
-// upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-// number = [1, 2, 3, 4, 5, 6, 7, 8, 9];
-// lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-// symbol = ["!", "#", "$", "%", "&", "'", "(", ")", "*", "+", ",", "-", "."];
-
-
-// var start = document.addEventListener('click', function() {
-//      generatePassword();
-//     document.getElementById("password").placeholder()
-// });
-
-// function generatePassword () {
-// start = parseInt(prompt('how long would you like your password to be between 8 and 20?'));{
-//     if (!start) {
-//         alert("This needs a value");
-//       } else if (start < 8 || start > 20) {
-//         // Validates user input
-//         // Start user input prompts
-//         start = parseInt(prompt("choose between 8 and 20"));
-//       } else {
-//         // Continues once user input is validated
-//         confirmNumber = confirm("would you like a number?");
-//         confirmSymbol = confirm("would you like a special Symbol?");
-//         confirmUppercase = confirm("would you like an uppercase letter?");
-//         confirmLowercase = confirm("would you like a lowercase letter?");
-// }
-
-
-// if(confirmNumber && confirmSymbol && confirmUppercase && confirmLowercase){
-// // var generate = Math.floor(Math.random() * number.length);
-// // console.log(generate);
-
-
-// }
-
-
-
-// }
-
-//     }
-
-
-
-
-
-
-
-//     // FUNCTIONS MAKING RANDOM X
-//  function getRandomLower () {
-//     return String.fromCharCode(Math.floor(Math.random() * 26)+ 97);
-
-//   }
-//    //  console.log(getRandomLower());
-
-
-
-//   function getRandomUpper () {
-//    return String.fromCharCode(Math.floor(Math.random() * 26)+ 65)
-
-//  }
-//  //  console.log(getRandomUpper());
-
-
-//   function getRandomNumber() {
-//     return String.fromCharCode(Math.floor(Math.random() * 10 )+ 48);
-//   }
-
-//  //  console.log(getRandomNumber());
-
-
-//   function getRandomSymbol() {
-//    const Symbols = '!@#$%^&*()<>?~';
-//    return Symbols[Math.floor(Math.random()* Symbols.length)];
-//  }
-
-
-
-// const specialCharacters = "!@#$%^&*()";
 const start = document.getElementById('generate')
 start.addEventListener('click', generatePassword)
 var passwordLength = 0;
@@ -98,7 +6,7 @@ var passwordLength = 0;
 
 // Prompts that come up after you click generate password
 function generatePassword() {
-// Was placed here in order to update the password and generate a new one everytime, by also deleting the previous one that was generated, on the screen.
+    // Was placed here in order to update the password and generate a new one everytime, by also deleting the previous one that was generated, on the screen.
     var passwordText = document.querySelector("#password");
 
     passwordText.value = "Your password will be displayed here";
@@ -162,7 +70,7 @@ function creatingPassword(numbers, lowerCases, upperCases, special) {
 
     // this is a minimum count for numbers, lowerCases, upperCases & specialCharacters
     var minimumCount = 0;
-  // Empty string until it is generated
+    // Empty string until it is generated
     var randomPasswordGenerated = "";
     // Checks to make sure user selected ok for all and uses empty minimum from above
     while (minimumCount < passwordLength) {
@@ -191,21 +99,21 @@ function creatingPassword(numbers, lowerCases, upperCases, special) {
 
         }
     }
-   
-//Console log to insure it is working.
+
+    //Console log to insure it is working.
     console.log(randomPasswordGenerated);
-// Call upon the id of password in the HTML document
+    // Call upon the id of password in the HTML document
     var passwordText = document.querySelector("#password");
-//updates the value of PasswordText to the generated Password
+    //updates the value of PasswordText to the generated Password
     passwordText.value = randomPasswordGenerated;
 
 };
 
 
 // This function copies the created Password onto the clipboard and also alerts the user when they initiate the function
-function copyPassword(){
-document.querySelector("#password").select();
-document.execCommand("Copy");
-alert("Password copied to clipboard");
+function copyPassword() {
+    document.querySelector("#password").select();
+    document.execCommand("Copy");
+    alert("Password copied to clipboard");
 
 }
