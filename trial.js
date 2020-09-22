@@ -202,4 +202,10 @@ function creatingPassword(numbers, lowerCases, upperCases, special) {
 };
 
 
+// This function copies the created Password onto the clipboard and also alerts the user when they initiate the function
+function copyPassword(){
+document.querySelector("#password").select();
+document.execCommand("Copy");
+alert("Password copied to clipboard");
 
+}
